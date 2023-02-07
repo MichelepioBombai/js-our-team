@@ -5,6 +5,8 @@
 // Scott Estrada		Developer				scott-estrada-developer.jpg
 // Barbara Ramos		Graphic Designer		barbara-ramos-graphic-designer.jpg
 
+const cardContainer = document.getElementById("card-container")
+
 
 const teamMember =[
   {
@@ -40,9 +42,21 @@ const teamMember =[
 ];
 
 for(const member of teamMember) {
-  console.log(member.nome);
-  console.log(member.ruolo);
-  console.log(member.pic);
+  console.log("pic:" + member.pic);
+  
+const cardHTML = `
+  <div class="col">
+      <div class="col card text-center mt-3">
+         <img class="card-img-top" src="./img/${member.pic}" alt="Title">
+         <div class="card-body">
+            <h4 class="card-title">${member.nome}</h4>
+            <p class="card-text">${member.ruolo}</p>
+         </div>
+      </div>
+  </div>`;
+
+  cardContainer.innerHTML +=cardHTML
+
 }
 
 
